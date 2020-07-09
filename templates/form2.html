@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+  fieldset {
+  background-color: #eeeeee;
+  width:300px;
+  line-height:1.8;
+}
+
+legend {
+  background-color: gray;
+  color: white;
+  padding: 5px 10px;
+}
+
+input {
+  margin: 5px;
+}
+.align-center {
+    display: block;
+    margin: 1.0em auto;
+    text-align: center;
+}
+</style>
+</head>
+
+<body style="background-color:Gainsboro;" >
+ <div class="login" >
+	<h1 style="color:DodgerBlue;" class="align-center" >FOREST FIRE PREDICTION</h1>
+    
+    <div class="row" >
+    <form action="{{ url_for('predict')}}" method="post" class="align-center" >
+      <fieldset class="align-center" style="background-color:Turquoise;" >
+      <legend>Input Data :</legend>
+    	<p>Temperature<input type="text" style="background-color:Snow;"  style="border:2px solid Tomato;" name="Temperature" placeholder="Temperature Celcius" required="required" /></p>
+        <p>Oxygen<input type="text" style="background-color:Snow;"  style="border:2px solid Tomato;" name="Oxygen" placeholder="Oxygen in ppm" required="required" /></p>
+		<p>Humidity<input type="text" style="background-color:Snow;"  style="border:2px solid Tomato;"name="Humidity" placeholder="Humidity%" required="required" /></p>
+
+        <button type="submit" style="background-color:Bisque;" class="btn btn-primary btn-block btn-large" >Predict</button>
+        <?fieldset>
+    </form>
+</div>
+
+   <br class="align-center" >
+   <br>
+   <h2 class="align-center" style="color:Crimson;" >PREDICTION RESULTS :</h2>
+   <textarea rows = "5" cols = "50" name = "description" class="align-center" style="background-color:LightYellow">
+        {{pred}}
+    </textarea>
+
+ </div>
+
+
+</body>
+
+
+</html>
