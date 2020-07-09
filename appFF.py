@@ -17,7 +17,7 @@ model = pickle.load(open('modelFF.pkl', 'rb'))
 def home():
     return render_template('form2.html')
 
-@appFF.route('/predict',methods=['POST'])
+@appFF.route('/predict',methods=['POST','GET'])
 def predict():
     '''
     For rendering results on HTML GUI
